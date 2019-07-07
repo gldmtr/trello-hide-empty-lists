@@ -4,18 +4,30 @@
   "name": "Hide empty trello lists",
   "description": "This extension allow to hide empty lists in trello",
   "version": "1.0",
+  
+  "icons": {
+    "16": "icon-disabled.png",
+	"48": "icon-disabled.png",
+	"128": "icon-disabled.png"
+  },
 
   "browser_action": {
-    "default_icon": "icon.png",
-    "default_popup": "index.html"
+    "default_icon": "icon-disabled.png"
   },
+  
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  
   "content_scripts": [
     {
       "matches": ["https://trello.com/*"],
-      "js": ["trello.js"],
+      "js": ["content.js"],
       "run_at": "document_end"
     }
   ],
+  
   "permissions": [
     "activeTab"
   ]
