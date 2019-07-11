@@ -18,9 +18,9 @@ function hideLists() {
 
 if (chrome.runtime) {
   chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
-  	var action = request.action, hide = request.hide;
-  	if (action === 'trello-lists-toogle') {
-  	  hide ? hideLists() : showLists();
-  	}
+    var action = request.action, hide = request.hide;
+    if (action === 'trello-lists-toogle') {
+      hide ? hideLists() : showLists();
+    }
   });
 }
